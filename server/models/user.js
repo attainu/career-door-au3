@@ -1,6 +1,7 @@
 "use strict";
 const Sequelize = require("sequelize");
 const db = require("../config/config");
+const bcrypt = require('bcrypt');
 
 const User = db.define("users", {
   first_name: {
@@ -38,6 +39,20 @@ const User = db.define("users", {
     type: Sequelize.DATE,
     field:'updatedat'
   }
-});
+},
+{
+    hooks: {
+      beforeCreate: (user) => {
+        user.password = bcrypt.hashSync(user.password, 10);
+        console.log(user.password);
+      }
+    },
+    instanceMethods: {
+      validPassword: function(password) {
+        return bcrypt.compareSync(password, this.password);
+      }
+    }
+  }
+);
 
 module.exports = User;

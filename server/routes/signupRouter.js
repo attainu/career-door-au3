@@ -2,18 +2,25 @@
 const express = require('express');
 const router = express.Router();
 const chalk = require('chalk');
-const moment = require('moment');
 const userModel = require('../models/user');
 
-router.post('/auth',async(req,res,next)=>{
+router.post('/auth',async(req,res)=>{
   let response = {};
   try {
     const reqParams = req.body;
-    await addUser(reqParams);
-    response.success = true;
-    response.message = "You have signed-up successfully";
+    const status = await addUserController(reqParams);
+    if(!status){
+      response.success = false;
+      response.message = "Email Id already exists";
+    }
+    else{
+      response.success = true;
+      response.message = "You have signed-up successfully";
+    }
   } catch (e) {
     console.error(chalk.red(`route:-${e}`));
+    response.success = false;
+    response.message = "Signed up failed";
   } finally {
     res.setHeader("content-type","application/json");
     res.json(response);
@@ -22,7 +29,7 @@ router.post('/auth',async(req,res,next)=>{
 })
 
 
-async function addUser(params){
+async function addUserController(params){
   const {first_name,last_name,email,gender,dob,user_type,createdat,updatedat,password,confirm_password,company_name}=params;
   try {
     await userModel.create({
