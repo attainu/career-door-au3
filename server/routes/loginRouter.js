@@ -1,8 +1,9 @@
 "use strict";
 const express = require('express');
 const router = express.Router();
-const loginModel = require('../models/user');
+const loginModel = require('../config/config');
 const chalk = require('chalk');
+
 
 router.post('/auth',async(req,res)=>{
   let response={};
@@ -19,7 +20,7 @@ router.post('/auth',async(req,res)=>{
     }
 
   } catch (e) {
-    console.log(`${e}`);
+    console.log(chalk.red(`Route${e}`));
   }
   finally{
     res.header("content-type","application/json");
@@ -27,16 +28,22 @@ router.post('/auth',async(req,res)=>{
   }
 })
 
-
+// login controller
 async function loginController(params){
-const {email,password} = params;
-try {
-  await loginModel.findOne({where:{email:email}})
-  return true;
-} catch (e) {
-  console.log(`controller ${e}`);
-  return false;
-}
+  const {email,password} = params;
+  try {
+    const status = await loginModel.findOne({where:{email:email}})
+
+    if(!status || !(status.validPassword(password))){
+      return false;
+    }
+    else{
+      return true;
+    }
+  } catch (e) {
+    console.log(chalk.red(`controller ${e}`));
+    return false;
+  }
 }
 
 module.exports = router;

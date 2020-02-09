@@ -1,6 +1,6 @@
 "use strict";
-const sequelize = require('sequelize');
-
+const Sequelize = require('sequelize');
+const user = require('../models/User');
 const data = {
   "user":"postgres",
   "password":"postgres",
@@ -11,7 +11,7 @@ const data = {
 
 // creating the sequilize instance.
 
-module.exports = new sequelize(data.database,data.user,data.password,{
+const sequelize = new Sequelize(data.database,data.user,data.password,{
   host:data.host,
   dialect:data.user,
   operatorsAliases: false,
@@ -22,3 +22,24 @@ module.exports = new sequelize(data.database,data.user,data.password,{
     idle: 10000
   }
 });
+
+
+
+const userModel = user(sequelize,Sequelize);
+
+
+module.exports = userModel;
+// const Sequelize = require('sequelize')
+// const accounts = require('./models')
+// const sequelize = new Sequelize('postgres://postgres:bhavesh@localhost:5432/guftagu')
+//
+//
+// sequelize.authenticate()
+// .then(() => console.log('database connection made!'))
+// .catch(() => console.log("connection to db failed!"))
+//
+// const accountsModel = accounts(sequelize, Sequelize)
+// console.log(accountsModel)
+//
+//
+// module.exports =  accountsModel

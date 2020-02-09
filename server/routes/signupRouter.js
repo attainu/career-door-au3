@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const chalk = require('chalk');
-const userModel = require('../models/user');
+const userModel = require('../config/config');
 
 router.post('/auth',async(req,res)=>{
   let response = {};
@@ -28,7 +28,7 @@ router.post('/auth',async(req,res)=>{
 
 })
 
-
+// controller
 async function addUserController(params){
   const {first_name,last_name,email,gender,dob,user_type,createdat,updatedat,password,confirm_password,company_name}=params;
   try {
@@ -52,19 +52,6 @@ async function addUserController(params){
   }
 }
 
-// router.get('/all', async(req, res, next) => {
-//   const users = await findUsers();
-//   res.json(users);
-// })
-//
-// // findUsers
-// async function findUsers(){
-// try {
-//   const data = await userModel.findAll();
-//   return data;
-// } catch (e) {
-// console.error(chalk.red(e));
-// }
-// }
+
 
 module.exports = router;
