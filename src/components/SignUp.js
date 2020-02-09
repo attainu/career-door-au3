@@ -11,6 +11,7 @@ const SignUp = () => {
   Gender:${inputs.gender}
   Company:${inputs.company}
   user_type:${inputs.user_type}
+  Date of Birth:${inputs.dob}
   `);
     }
     const {inputs, handleInputChange, handleSubmit} = useSignUpForm({firstName: '', lastName: '', email: '', gender:'',user_type:'', company:'',confirmpassword:'',dob:'', password: ''}, signup);
@@ -59,7 +60,7 @@ const SignUp = () => {
 <div>
 <label>Date of Birth</label>
 <div>
-<input type="date" name="dob" />
+<input type="date" name="dob" value={inputs.dob} onChange={handleInputChange} required/>
 </div>
 </div>
 <br/>
@@ -71,7 +72,7 @@ const SignUp = () => {
 
                 <div className="form-group">
                     <label>Confirm Password</label>
-                    <input type="password" className="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="atleast 1UC,1LC,min 8 characters" name="confirmpassword" onChange={handleInputChange} value={inputs.confirmpassword} required/>
+                    <input type="password" className="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="atleast 1UC,1LC,min 8 characters" name="confirmpassword" onChange={handleInputChange}  value={inputs.confirmpassword}  required/>
                 </div>
 
                 <button type="submit" className="btn btn-primary btn-block" >Sign Up</button>
@@ -79,8 +80,6 @@ const SignUp = () => {
                     Already registered <a href="/sign-in">sign in?</a>
                 </p>
             </form>
-           
-
 </div>
 
     )
