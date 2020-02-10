@@ -16,7 +16,7 @@ h2{
   position: relative;
   font-weight: 500;
   font-family: 'Fira Sans', sans-serif;
-  margin-top: 400px;
+  margin-top:410px;
   
 }
 
@@ -82,10 +82,10 @@ body, html, .App, #root, .auth-wrapper {
   color: #167bff;
 }
 
-@media only screen and (min-width:800px){
+@media only screen and (max-device-width:400px){
   h2 {
     margin-top:50px;
-    position: relative;
+    
   }
   
 }
