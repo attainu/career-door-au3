@@ -4,7 +4,7 @@ import useSignUpForm from './customhook';
 
 
 const SignUp = () => {
-    const signup = () => {
+    const signup = () => {                                      //callback function onsubmit of form
       alert(`User Created! 
   Name: ${inputs.firstName} ${inputs.lastName}
   Email: ${inputs.email}
@@ -14,10 +14,12 @@ const SignUp = () => {
   Date of Birth:${inputs.dob}
   `);
     }
+
+    //calling the hooks from customhook file
     const {inputs, handleInputChange, handleSubmit} = useSignUpForm({firstName: '', lastName: '', email: '', gender:'',user_type:'', company:'',confirmpassword:'',dob:'', password: ''}, signup);
     return(
-<div>
-<form onSubmit={handleSubmit}>
+<div className="form">
+<form  onSubmit={handleSubmit}>
                 <h2>Sign Up</h2>
 
                 <div className="form-group">
