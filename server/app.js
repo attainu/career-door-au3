@@ -10,10 +10,11 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const signupRouter = require('./routes/signupRouter');
 const loginRouter = require('./routes/loginRouter');
+const cors = require('cors')
 
 const app = express();
 
-
+app.use(cors());
 app.use(logger('dev'));
 // app.use(bodyParser.json());
 app.use(express.json());
@@ -21,14 +22,26 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 app.use('/', indexRouter);
 app.use('/signup', signupRouter);
 app.use('/login',loginRouter);
+
+// aceess control origin
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
 
 // error handler
 app.use(function(err, req, res, next) {

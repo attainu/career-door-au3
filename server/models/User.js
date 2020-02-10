@@ -5,39 +5,50 @@ const bcrypt = require('bcrypt');
 module.exports = (sequelize,Sequelize) =>{
   const User = sequelize.define("users",{
     first_name: {
-      type: Sequelize.STRING
+      type: Sequelize.STRING,
+      allowNull: false
     },
     last_name: {
-      type: Sequelize.STRING
+      type: Sequelize.STRING,
+      allowNull: false
     },
     email: {
-      type: Sequelize.STRING
+      type: Sequelize.STRING,
+      primaryKey:true
     },
     gender: {
-      type: Sequelize.STRING
+      type: Sequelize.STRING,
+      allowNull: false
     },
     dob: {
-      type: Sequelize.DATE
+      type: Sequelize.DATE,
+      allowNull: false
     },
     user_type: {
-      type: Sequelize.TEXT
+      type: Sequelize.TEXT,
+      allowNull: false
     },
     password: {
-      type: Sequelize.STRING
+      type: Sequelize.STRING,
+      allowNull: false
     },
     confirm_password: {
-      type: Sequelize.STRING
+      type: Sequelize.STRING,
+      allowNull: false
     },
     company_name: {
-      type: Sequelize.STRING
+      type: Sequelize.STRING,
+      allowNull: false
     },
     createdAt: {
       type: Sequelize.DATE,
-      field:'createdat'
+      field:'createdat',
+      allowNull: false
     },
     updatedAt: {
       type: Sequelize.DATE,
-      field:'updatedat'
+      field:'updatedat',
+      allowNull: false
     }
 
   },

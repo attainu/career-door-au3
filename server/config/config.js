@@ -23,6 +23,9 @@ const sequelize = new Sequelize(data.database,data.user,data.password,{
   }
 });
 
+sequelize.sync()
+    .then(() => console.log('users table has been successfully created'))
+    .catch(error => console.log('This error occured', error));
 
 
 const userModel = user(sequelize,Sequelize);
