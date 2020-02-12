@@ -105,6 +105,13 @@ body {
   font-size: 50px;
   margin-top:-60px;
 }
+
+
 footer{
-  background-color:gray;
+  
+  height: "50px";
+  margin-top:10px;
+  background-color:grey;
+  
+  
 }
