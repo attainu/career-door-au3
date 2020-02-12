@@ -2,14 +2,15 @@ import React from 'react';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import My404 from './components/My404';
-import { BrowserRouter as Router, Switch, Route,Link } from "react-router-dom";
-import './App.css';
+import Footer from './components/Footer'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 
 
 function App() {
   return (
     <Router>
-          <Link className="navbar-brand" to={"/sign-in"} >Career Door</Link>
+          
          
           <Switch>
 
@@ -18,8 +19,9 @@ function App() {
             <Route path="/sign-up" component={SignUp} />
             <Route path="*" component={My404} />
           </Switch>
-        
+          <Footer/>
         </Router>
+        
   );
 }
 

@@ -1,6 +1,8 @@
 import React from 'react';
-import 'C:/Users/PARESH/Desktop/capstone/glassdoor/src/components/signupcss.css';
+import 'C:/Users/PARESH/Desktop/career-door-au3/src/components/signupcss.css';
 import useSignUpForm from './customhook';
+import { Link } from "react-router-dom";
+
 
 const SignUp = () => {
     const signup = () => {                                      //callback function onsubmit of form
@@ -18,6 +20,8 @@ const SignUp = () => {
       const {inputs, handleInputChange, handleSubmit} = useSignUpForm({firstName: '', lastName: '', email: '', gender:'',user_type:'', company:'',confirmpassword:'',dob:'', password: ''}, signup);
     return(
         <div>
+            <Link className="navbar-brand" to={"/sign-in"} >Career Door</Link>
+
        <div className="container">
             <form className="form-horizontal" onSubmit={handleSubmit}>
                 <h2>Sign Up</h2>

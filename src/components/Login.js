@@ -1,5 +1,7 @@
 import React from 'react';
 import '../App.css';
+import { Link } from "react-router-dom";
+
 import useSignUpForm from './customhook';
 const Login=()=>{
     const login = () =>{
@@ -10,6 +12,7 @@ const Login=()=>{
 
 
 <div id="login">
+<Link className="navbar-brand" id="navlogin" to={"/sign-in"} >Career Door</Link>
         <h2 className="text-center text-white pt-5">Login form</h2>
         <div className="container">
             <div id="login-row" className="row justify-content-center align-items-center">
@@ -29,10 +32,12 @@ const Login=()=>{
                                 
                                 <input type="submit" name="submit" className="btn btn-info btn-md" value="submit"/>
                             </div>
-                            <div id="register-link" className="text-right">
+                          
+                        </form>
+                        <br/>
+                        <div id="register-link" className="text-right">
                                 <a href="/sign-up" className="text-info">Register here</a>
                             </div>
-                        </form>
                     </div>
                 </div>
             </div>

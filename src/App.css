@@ -89,9 +89,9 @@ body {
   height: 100vh;
 }
 #login .container #login-row #login-column #login-box {
-  margin-top: 120px;
+  margin-top: 10px;
   max-width: 600px;
-  height: 320px;
+  height: 250px;
   border: 1px solid #9C9C9C;
   background-color: #EAEAEA;
 }
@@ -99,5 +99,12 @@ body {
   padding: 20px;
 }
 #login .container #login-row #login-column #login-box #login-form #register-link {
-  margin-top: -85px;
+  margin-top:-85px;
+}
+#navlogin{
+  font-size: 50px;
+  margin-top:-60px;
+}
+footer{
+  background-color:gray;
 }
