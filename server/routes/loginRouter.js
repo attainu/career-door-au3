@@ -23,7 +23,7 @@ router.post('/auth',async(req,res)=>{
     console.log(chalk.red(`Route${e}`));
   }
   finally{
-    res.header("content-type","application/json");
+    // res.header("content-type","application/json");
     res.json(response);
   }
 })

@@ -22,7 +22,7 @@ router.post('/auth',async(req,res)=>{
     response.success = false;
     response.message = "Signed up failed";
   } finally {
-    res.setHeader("content-type","application/json");
+    // res.setHeader("content-type","application/json");
     res.json(response);
   }
 
