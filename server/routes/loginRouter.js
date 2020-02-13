@@ -31,6 +31,7 @@ router.post('/auth',async(req,res)=>{
 // login controller
 async function loginController(params){
   const {email,password} = params;
+  console.log(chalk.white(password));
   try {
     const status = await loginModel.findOne({where:{email:email}})
 

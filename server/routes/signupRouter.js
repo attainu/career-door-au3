@@ -30,7 +30,6 @@ router.post('/auth',async(req,res)=>{
 
 // controller
 async function addUserController(params){
-  console.log(chalk.yellow(JSON.stringify(params)));
   const {first_name,last_name,email,gender,dob,user_type,createdat,updatedat,password,confirm_password,company_name}=params;
   try {
     await userModel.create({
