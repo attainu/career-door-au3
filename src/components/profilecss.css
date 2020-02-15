@@ -1,0 +1,25 @@
+
+.profilenav{
+    margin-top:90px;
+    background-color:lightgrey;
+    width:18%;
+    height:100%;
+}
+
+.sidenavprofile{
+list-style-type:none;
+font-size:25px;
+width:15%;
+height:340px;
+
+
+}
+.display-profile-elements{
+    width:80%;
+    height:350px;
+    margin-top:-350px;
+    background-color:whitesmoke;
+    margin-left: 250px;
+}
+
+

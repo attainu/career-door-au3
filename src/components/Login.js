@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import { Link } from "react-router-dom";
+
 
 import useSignUpForm from './customhook';
 const Login=()=>{
@@ -12,20 +12,20 @@ const Login=()=>{
 
 
 <div id="login">
-<Link className="navbar-brand" id="navlogin" to={"/sign-in"} >Career Door</Link>
+
         <h2 className="text-center text-white pt-5">Login form</h2>
         <div className="container">
             <div id="login-row" className="row justify-content-center align-items-center">
                 <div id="login-column" className="col-md-6">
                     <div id="login-box" className="col-md-12">
                         <form id="login-form" className="form" action="" method="post" onSubmit={handleSubmit}>
-                            <h3 className="text-center text-info">Login</h3>
+                            <h3 className="text-center text-info">Sign-In</h3>
                             <div className="form-group">
-                                <label for="username" className="text-info">Email</label><br/>
+                                <label htmlfor="username" className="text-info">Email</label><br/>
                                 <input type="text" className="form-control" placeholder="Enter email" name="email" onChange={handleInputChange} value={inputs.email} />
                             </div>
                             <div className="form-group">
-                                <label for="password" className="text-info">Password:</label><br/>
+                                <label htmlfor="password" className="text-info">Password:</label><br/>
                                 <input type="password" className="form-control"placeholder="Enter password" name="password" onChange={handleInputChange} value={inputs.password} />
                             </div>
                             <div className="form-group">
