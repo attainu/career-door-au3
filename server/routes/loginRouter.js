@@ -1,7 +1,7 @@
 "use strict";
 const express = require('express');
 const router = express.Router();
-const loginModel = require('../config/config');
+const model = require('../config/config');
 const chalk = require('chalk');
 
 
@@ -33,7 +33,7 @@ async function loginController(params){
   const {email,password} = params;
   console.log(chalk.white(password));
   try {
-    const status = await loginModel.findOne({where:{email:email}})
+    const status = await model.userModel.findOne({where:{email:email}})
 
     if(!status || !(status.validPassword(password))){
       return false;

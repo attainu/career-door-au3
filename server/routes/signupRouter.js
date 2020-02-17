@@ -2,12 +2,14 @@
 const express = require('express');
 const router = express.Router();
 const chalk = require('chalk');
-const userModel = require('../config/config');
+const model = require('../config/config');
+const uuid = require('uuid');
 
 router.post('/auth',async(req,res)=>{
   let response = {};
   try {
     const reqParams = req.body;
+    reqParams.id = uuid.v4();
     const status = await addUserController(reqParams);
     if(!status){
       response.success = false;
@@ -30,17 +32,16 @@ router.post('/auth',async(req,res)=>{
 
 // controller
 async function addUserController(params){
-  const {first_name,last_name,email,gender,dob,user_type,createdat,updatedat,password,confirm_password,company_name}=params;
+  const {id,first_name,last_name,email,gender,dob,user_type,password,confirm_password,company_name}=params;
   try {
-    await userModel.create({
+    await model.userModel.create({
+      id,
       first_name,
       last_name,
       email,
       gender,
       dob,
       user_type,
-      createdat,
-      updatedat,
       password,
       confirm_password,
       company_name
