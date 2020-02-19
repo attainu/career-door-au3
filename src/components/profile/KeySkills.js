@@ -1,6 +1,6 @@
 import React from "react";
 import useSignUpForm from '../customhook';
-import SidenavigationBar from "../Sidenavigationbar";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import {
@@ -20,7 +20,7 @@ Technical skills:${inputs.Technicalskills}
 
     return(
         <div>
-            <SidenavigationBar/>
+            
             <div className="display-profile-elements">
           
 <Container className="App">

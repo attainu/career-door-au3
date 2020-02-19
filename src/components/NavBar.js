@@ -85,6 +85,11 @@ const NavBar = () => {
                   SignIn
                 </NavLink>
               </span>
+              <span className="navbar-text white-text">
+                <NavLink to="/EditProfile" className="nav-link">
+                  Edit Profile 
+                </NavLink>
+              </span>
             </div>
           </div>
         </nav>
