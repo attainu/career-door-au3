@@ -21,23 +21,24 @@ const Login=()=>{
                         <form id="login-form" className="form" action="" method="post" onSubmit={handleSubmit}>
                             <h3 className="text-center text-info">Sign-In</h3>
                             <div className="form-group">
-                                <label htmlfor="username" className="text-info">Email</label><br/>
+                                <label htmlFor="username" className="text-info">Email</label><br/>
                                 <input type="text" className="form-control" placeholder="Enter email" name="email" onChange={handleInputChange} value={inputs.email} />
                             </div>
                             <div className="form-group">
-                                <label htmlfor="password" className="text-info">Password:</label><br/>
+                                <label htmlFor="password" className="text-info">Password:</label><br/>
                                 <input type="password" className="form-control"placeholder="Enter password" name="password" onChange={handleInputChange} value={inputs.password} />
                             </div>
                             <div className="form-group">
                                 
-                                <input type="submit" name="submit" className="btn btn-info btn-md" value="submit"/>
+                                <input type="submit" name="submit" className="btn btn-info btn-md" id="loginbutton"value="submit"/>
                             </div>
-                          
-                        </form>
-                        <br/>
-                        <div id="register-link" className="text-right">
+                            <br/>
+                            
+                            <div id="register-link" className="text-right">
                                 <a href="/sign-up" className="text-info">Register here</a>
                             </div>
+                        </form>
+                        
                     </div>
                 </div>
             </div>

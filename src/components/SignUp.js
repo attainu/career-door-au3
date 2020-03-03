@@ -1,5 +1,5 @@
 import React from 'react';
-import 'C:/Users/PARESH/Desktop/career-door-au3/src/components/signupcss.css';
+import './signupcss.css';
 import useSignUpForm from './customhook';
 import { Link } from "react-router-dom";
 
@@ -26,26 +26,26 @@ const SignUp = () => {
             <form className="form-horizontal" onSubmit={handleSubmit}>
                 <h2>Sign Up</h2>
                 <div className="form-group">
-                    <label htmlfor="firstName" className="col-sm-3 control-label">First Name</label>
+                    <label htmlFor="firstName" className="col-sm-3 control-label">First Name</label>
                     <div className="col-sm-9">
                         <input type="text" id="firstName" placeholder="First Name" className="form-control"name="firstName" onChange={handleInputChange} value={inputs.firstName} required autoFocus />
                     </div>
                 </div>
                 <div className="form-group">
-                    <label htmlfor="lastName" className="col-sm-3 control-label">Last Name</label>
+                    <label htmlFor="lastName" className="col-sm-3 control-label">Last Name</label>
                     <div className="col-sm-9">
                         <input type="text" id="lastName" placeholder="Last Name" className="form-control" name="lastName" onChange={handleInputChange} value={inputs.lastName} required autoFocus />
                     </div>
                 </div>
                 <div className="form-group">
-                    <label htmlfor="email" className="col-sm-3 control-label">Email* </label>
+                    <label htmlFor="email" className="col-sm-3 control-label">Email* </label>
                     <div className="col-sm-9">
                         <input type="email" id="email" placeholder="Email" className="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  name="email" onChange={handleInputChange} value={inputs.email} required />
                     </div>
                 </div>
 
                 <div className="form-group">
-                    <label htmlfor="birthDate" className="col-sm-3 control-label">Date of Birth*</label>
+                    <label htmlFor="birthDate" className="col-sm-3 control-label">Date of Birth*</label>
                     <div className="col-sm-9">
                         <input type="date" id="birthDate" className="form-control" name="dob" value={inputs.dob} onChange={handleInputChange} required/>
                     </div>
@@ -70,7 +70,7 @@ const SignUp = () => {
                 </div> 
 
                 <div className="form-group">
-                        <label htmlfor="Company" className="col-sm-3 control-label">Company</label>
+                        <label htmlFor="Company" className="col-sm-3 control-label">Company</label>
                     <div className="col-sm-9">
                         <input type="text"  placeholder="enter your company name" className="form-control" name="company" onChange={handleInputChange} value={inputs.company}  required />
                     </div>
@@ -95,20 +95,20 @@ const SignUp = () => {
                 </div> 
 
                 <div className="form-group">
-                    <label htmlfor="password" className="col-sm-3 control-label">Password*</label>
+                    <label htmlFor="password" className="col-sm-3 control-label">Password*</label>
                     <div className="col-sm-9">
                         <input type="password" id="password" placeholder="Password" className="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  name="password" onChange={handleInputChange} value={inputs.password} required/>
                     </div>
                 </div>
                 <div className="form-group">
-                    <label htmlfor="password" className="col-sm-3 control-label">Confirm Password*</label>
+                    <label htmlFor="password" className="col-sm-3 control-label">Confirm Password*</label>
                     <div className="col-sm-9">
                         <input type="password"  placeholder="Password" className="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="confirmpassword" onChange={handleInputChange}  value={inputs.confirmpassword}  required />
                     </div>
                 </div>
                
                 <br/>
-                <button type="submit" className="btn btn-primary  ">Register</button>
+                <button type="submit" className="btn btn-primary" id="signupbutton">Register</button>
             </form> 
         </div> 
         

@@ -14,3 +14,16 @@
     margin-right: auto;
     margin-top:90px;
 }
+
+@media only screen and (max-width:600px) {
+    .display-profile-elements{
+        width:70%; 
+        
+    }
+    .formdiv{
+        width:100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:90px;
+    }
+}

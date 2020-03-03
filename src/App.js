@@ -6,8 +6,8 @@ import Footer from './components/FooterK';
 import NavBar from './components/NavBar';
 import Profile from './components/Profile';
 import EditProfile from './components/EditProfile';
+import Homepage from './components/Homepage';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
 
 
 function App() {
@@ -20,6 +20,7 @@ function App() {
             <Route path="/sign-up" component={SignUp} />
             <Route exact path='/profile' component={Profile} />
             <Route path='/EditProfile' component={EditProfile}/>
+            <Route path='/Homepage' component={Homepage}/>
             <Route path="*" component={My404} />
           </Switch>
           <Footer/>
