@@ -1,6 +1,6 @@
 import React from 'react';
-import './profilecss.css';
-import useSignUpForm from './customhook';
+import '../allcss/profilecss.css';
+import useSignUpForm from '../customhook';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -10,8 +10,8 @@ import {
     
   } from 'reactstrap';
 
- const EditProfile = () =>{
-     const editprofile=()=>{
+ const Profile = () =>{
+     const profile=()=>{
          alert(`school:${inputs.school}
          college:${inputs.college}
          graduation:${inputs.graduation}
@@ -23,22 +23,20 @@ address:${inputs.address}
         language:${inputs.language}
         Title:${inputs.title}
         description:${inputs.description}
-
         `)
-      
+        localStorage.setItem('school',inputs.school);
+        localStorage.setItem('college',inputs.college)
+        localStorage.setItem('graduation',inputs.graduation)
+        localStorage.setItem('company',inputs.company)
+        localStorage.setItem('position',inputs.position)
+        localStorage.setItem('keyskills',inputs.keyskills)
+        localStorage.setItem('Technicalskills',inputs.Technicalskills)
+        localStorage.setItem('address',inputs.address)
+        localStorage.setItem('language',inputs.language)
+        localStorage.setItem('title',inputs.title)
+        localStorage.setItem('description',inputs.description)
      }
-     const value1  =localStorage.getItem('school');
-     const value2  =localStorage.getItem('college')
-     const value3  =localStorage.getItem('graduation')
-     const value4  =localStorage.getItem('company')
-     const value5  =localStorage.getItem('position')
-     const value6  =localStorage.getItem('keyskills')
-     const value7  =localStorage.getItem('Technicalskills')
-     const value8  =localStorage.getItem('address')
-     const value9  =localStorage.getItem('language')
-     const value10 =localStorage.getItem('title')
-     const value11 =localStorage.getItem('description')
-    const {inputs,handleInputChange, handleSubmit} = useSignUpForm({school:value1,college:value2,graduation:value3,company:value4,position:value5,keyskills:value6,Technicalskills:value7,address:value8,language:value9,title:value10,description:value11}, editprofile);
+    const {inputs,handleInputChange, handleSubmit} = useSignUpForm({school:'',college:'',graduation:'',company:'',position:'',keyskills:'',Technicalskills:'',address:'',language:'',title:'',description:''}, profile);
 
      return(
     
@@ -139,7 +137,10 @@ address:${inputs.address}
                      </Col>
                     <br/>
                     <br/>
+                     
                  </Container>
+           
+           
                        </div>          
 
 
@@ -258,4 +259,4 @@ address:${inputs.address}
      );
 
  }
- export default EditProfile
+ export default Profile

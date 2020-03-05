@@ -1,6 +1,6 @@
 import React from 'react';
-import './signupcss.css';
-import useSignUpForm from './customhook';
+import '../allcss/signupcss.css';
+import useSignUpForm from '../customhook';
 import { Link } from "react-router-dom";
 
 

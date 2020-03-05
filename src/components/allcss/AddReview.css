@@ -1,0 +1,72 @@
+#form1{
+width: 170%;
+margin-left: 10%;
+}
+#form2{
+    width: 170%;
+    margin-left: 10%;
+    }
+    #form3{
+        width: 170%;
+        margin-left: 10%;
+        }
+        #form4{
+            width: 170%;
+            margin-left: 10%;
+            }
+            #form5{
+                width: 170%;
+                margin-left: 10%;
+                }
+                #form6{
+                    width: 170%;
+                    margin-left: 10%;
+                    }
+
+.grey-text{
+    font-size:15px;
+    margin-left:10%;
+}
+#button{
+    margin-left: 90%;
+}
+#addreviewheader{
+    font-size:20px;
+    margin-left:10%;
+    color:blueviolet;
+
+}
+@media only screen and (max-width:770px) {
+    #form1{
+        width: 90%;
+        margin-left: 8%;
+        }
+        #form2{
+            width: 90%;
+            margin-left: 8%;
+            }
+            #form3{
+                width: 90%;
+                margin-left: 8%;
+                }
+                #form4{
+                    width: 90%;
+                    margin-left: 8%;
+                    }
+                    #form5{
+                        width: 90%;
+                        margin-left: 8%;
+                        }
+                        #form6{
+                            width: 90%;
+                            margin-left: 8%;
+                            }
+        .grey-text{
+            font-size:15px;
+            margin-left:8%;
+        }
+        #button{
+            margin-left:0%;
+            
+        }
+}

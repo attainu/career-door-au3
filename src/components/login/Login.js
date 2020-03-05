@@ -1,8 +1,8 @@
 import React from 'react';
-import '../App.css';
+import '../../App.css';
 
 
-import useSignUpForm from './customhook';
+import useSignUpForm from '../customhook';
 const Login=()=>{
     const login = () =>{
         alert(`${inputs.email}`)
