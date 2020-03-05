@@ -4,11 +4,12 @@ import Search from './search';
 import axios from "axios";
 
 
-const useForceUpdate = () => useState()[1];
+
 
 const Homepage = props => {
   const [TedData, setTedData] = useState([]);
-  const [pageNo, setPageNo] = useState({});
+  const [page, setPage] = useState(1)
+
 
   useEffect(() => {
     async function fetchData() {
@@ -20,7 +21,7 @@ const Homepage = props => {
         
         console.log("data:", Data.data);
         setTedData(Data.data.result);
-        setPageNo(Data.data.pageInfo);
+        setPage(Data.data.pageInfo);
       } catch (error) {
         if (error) throw error;
       }
@@ -28,24 +29,28 @@ const Homepage = props => {
     fetchData();
   }, );
 
-  const forceUpdate = useForceUpdate();
+  
 
-  const handleClick = async () => {
-    try {
-      //setPageNo(Number(pageNo) + value);
-      var num = props.match.params.page;
-      const TedDataPage = await axios.get(
-        `http://localhost:4000/data/${num}`   
-      );
-      //setPageNo(no);
-      forceUpdate();
-      console.log("Page no:", TedDataPage.data.result);
-      setTedData(TedDataPage.data.result);
-      setPageNo(TedDataPage.data.pageInfo);
-    } catch (error) {
-      if (error) throw error;
-    }
-  };
+  const next = () => {
+   setTedData([])
+    setPage(page + 1)
+    axios.get(`/event/page/${page}`)
+        .then(res => {
+           setTedData([...res.data])
+        })
+        .catch(err => console.log(err))
+}
+
+const prev = () => {
+    if (page === 1) { return }
+   setTedData([])
+    setPage(page - 1)
+    axios.get(`/event/page/${page}`)
+        .then(res => {
+           setTedData([...res.data])
+        })
+        .catch(err => console.log(err))
+}
   return (
     <div>
       <Search />
@@ -68,6 +73,12 @@ const Homepage = props => {
                 );
               })
             : "Loading..."}
+             <div className="container mb-5">
+                <div className="btn-group btn-group-lg d-flex justify-content-center">
+                    <button type="button" className="btn btn-dark" onClick={prev}>Previous</button>
+                    <button type="button" className="btn btn-dark" onClick={next}>Next</button>
+                </div>
+            </div>
         </div>
   );
 };

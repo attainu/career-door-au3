@@ -2,7 +2,7 @@ import React from "react";
 import { MDBContainer, MDBRow, MDBCol} from 'mdbreact';
 import useSignUpForm from '../customhook';
 import "../allcss/AddReview.css";
-import Search from '../Homepage/search';
+
 
 const AddReview = () => {
 const submit=()=>{
