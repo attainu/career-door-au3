@@ -1,0 +1,27 @@
+.display-profile-elements {
+  width: 50%;
+  background-color: #f2f2f2;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 90px;
+  padding-bottom: 20px;
+  border-radius: 0.4em;
+}
+.formdiv {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 90px;
+}
+
+@media only screen and (max-width: 600px) {
+  .display-profile-elements {
+    width: 70%;
+  }
+  .formdiv {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 90px;
+  }
+}
