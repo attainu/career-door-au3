@@ -1,7 +1,7 @@
 // REST API's of the server
 
 /*
-signup authentication
+signup authentication in the backend
 */
 import axios from "axios";
 
