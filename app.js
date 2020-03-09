@@ -33,7 +33,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-app.use('/files', express.static('files'));
+app.use("/files", express.static("files"));
 
 // upload files
 app.use(
@@ -43,12 +43,11 @@ app.use(
 );
 
 const userRoute = require("./routes/userRoutes");
-app.use("/", indexRouter);
 app.use("/signup", signupRouter);
 app.use("/login", loginRouter);
 app.use("/profile", profileRouter);
 app.use("/user", userRoute);
-app.use("/review",reviewRouter);
+app.use("/review", reviewRouter);
 
 // aceess control origin
 // app.use(function(req, res, next) {

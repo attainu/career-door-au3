@@ -7,7 +7,7 @@
     "server": "nodemon ./bin/www",
     "client-install": "cd client && npm install",
     "client": "npm start --prefix client",
-    "serve": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "dependencies": {
     "bcrypt": "^3.0.8",
