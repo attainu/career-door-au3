@@ -6,7 +6,7 @@ signup authentication
 import axios from "axios";
 
 export const addUser = data => {
-  const url = "http://localhost:8080/signup/auth";
+  const url = "/signup/auth";
   return fetch(url, {
     method: "POST",
     body: JSON.stringify(data),
@@ -21,7 +21,7 @@ Login authentication
 */
 
 export const loginAuth = data => {
-  const url = "http://localhost:8080/login/auth";
+  const url = "/login/auth";
   return fetch(url, {
     method: "POST",
     body: JSON.stringify(data),
@@ -32,7 +32,7 @@ export const loginAuth = data => {
 };
 
 export const profile = async data => {
-  const url = "http://localhost:8080/profile/";
+  const url = "/profile/";
   let result = "";
   try {
     result = await axios({
@@ -48,7 +48,7 @@ export const profile = async data => {
 };
 
 export const loginAuthWithToken = data => {
-  const url = "http://localhost:8080/user/loginUser";
+  const url = "/user/loginUser";
   return fetch(url, {
     method: "POST",
     body: JSON.stringify(data),
@@ -59,7 +59,7 @@ export const loginAuthWithToken = data => {
 };
 
 export const addReview = async data => {
-  const url = "http://localhost:8080/review/addreview";
+  const url = "/review/addreview";
   let result = "";
   try {
     result = await axios({
@@ -74,7 +74,7 @@ export const addReview = async data => {
 };
 
 export const viewReview = async data => {
-  const url = "http://localhost:8080/review/viewreview/" + data.company;
+  const url = "/review/viewreview/" + data.company;
   let result = "";
   try {
     result = await axios.get(url);
