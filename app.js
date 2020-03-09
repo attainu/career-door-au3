@@ -20,12 +20,16 @@ const fileupload = require("express-fileupload");
 
 const app = express();
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static("client/build"));
+// }
 
 app.use(cors());
 app.use(logger("dev"));
+
+app.get("*", (request, response) => {
+  response.sendFile(path.join(__dirname, "client/build", "index.html"));
+});
 
 // passport config
 app.use(passport.initialize());
@@ -77,10 +81,6 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render("error");
-});
-
-app.get("*", (request, response) => {
-  response.sendFile(path.join(__dirname, "client/build", "index.html"));
 });
 
 module.exports = app;
