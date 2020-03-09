@@ -20,6 +20,13 @@ const fileupload = require("express-fileupload");
 
 const app = express();
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+app.get("*", (request, response) => {
+  response.sendFile(path.join(__dirname, "client/build", "index.html"));
+});
+
 app.use(cors());
 app.use(logger("dev"));
 
@@ -48,13 +55,6 @@ app.use("/login", loginRouter);
 app.use("/profile", profileRouter);
 app.use("/user", userRoute);
 app.use("/review", reviewRouter);
-
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
-app.get("*", (request, response) => {
-  response.sendFile(path.join(__dirname, "client/build", "index.html"));
-});
 
 // aceess control origin
 // app.use(function(req, res, next) {
