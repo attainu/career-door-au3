@@ -5,10 +5,12 @@ import "./Addreview.css";
 import { useAlert } from "react-alert";
 import { connect } from "react-redux";
 import { addReview } from "../../url";
+import { useHistory } from "react-router-dom";
 // import Search from "../Homepage/search";
 
 const AddReview = props => {
   const alert = useAlert();
+  let history = useHistory();
   const submit = async () => {
     // alert(`company:${inputs.company}
     // jobtitle:${inputs.jobtitle}
@@ -29,6 +31,7 @@ const AddReview = props => {
       inputs.email = props.data.email;
       let result = await addReview(inputs);
       alert.success(result.message);
+      history.push("/viewReview");
     }
   };
 
