@@ -47,11 +47,11 @@ app.use(
 );
 
 const userRoute = require("./routes/userRoutes");
-app.use("/signup", signupRouter);
-app.use("/login", loginRouter);
-app.use("/profile", profileRouter);
-app.use("/user", userRoute);
-app.use("/review", reviewRouter);
+app.use("/api/signup", signupRouter);
+app.use("/api/login", loginRouter);
+app.use("/api/profile", profileRouter);
+app.use("/api/user", userRoute);
+app.use("/api/review", reviewRouter);
 
 // aceess control origin
 // app.use(function(req, res, next) {

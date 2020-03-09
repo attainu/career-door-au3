@@ -6,7 +6,7 @@ signup authentication in the backend
 import axios from "axios";
 
 export const addUser = data => {
-  const url = "/signup/auth";
+  const url = "/api/signup/auth";
   return fetch(url, {
     method: "POST",
     body: JSON.stringify(data),
@@ -21,7 +21,7 @@ Login authentication
 */
 
 export const loginAuth = data => {
-  const url = "/login/auth";
+  const url = "/api/login/auth";
   return fetch(url, {
     method: "POST",
     body: JSON.stringify(data),
@@ -32,7 +32,7 @@ export const loginAuth = data => {
 };
 
 export const profile = async data => {
-  const url = "/profile/";
+  const url = "/api/profile/";
   let result = "";
   try {
     result = await axios({
@@ -48,7 +48,7 @@ export const profile = async data => {
 };
 
 export const loginAuthWithToken = data => {
-  const url = "/user/loginUser";
+  const url = "/api/user/loginUser";
   return fetch(url, {
     method: "POST",
     body: JSON.stringify(data),
@@ -59,7 +59,7 @@ export const loginAuthWithToken = data => {
 };
 
 export const addReview = async data => {
-  const url = "/review/addreview";
+  const url = "/api/review/addreview";
   let result = "";
   try {
     result = await axios({
@@ -74,7 +74,7 @@ export const addReview = async data => {
 };
 
 export const viewReview = async data => {
-  const url = "/review/viewreview/" + data.company;
+  const url = "/api/review/viewreview/" + data.company;
   let result = "";
   try {
     result = await axios.get(url);
