@@ -20,7 +20,7 @@ export const logoutAction = () => {
 // Login - Get User Token
 
 export const loginUser = userData => dispatch => {
-  const url = "http://localhost:8080/user/loginUser";
+  const url = "/api/user/loginUser";
   axios
     .post(url, userData)
     .then(res => {
