@@ -27,8 +27,8 @@ const app = express();
 app.use(cors());
 app.use(logger("dev"));
 
-app.get("*", (request, response) => {
-  response.sendFile(path.join(__dirname, "client/build", "index.html"));
+app.get(/^\/(?!api).*/, (req, res) => {
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
 });
 
 // passport config
