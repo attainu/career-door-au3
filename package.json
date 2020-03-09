@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
-    "client": "cd client && npm start",
+    "client-install": "cd client && npm install",
+    "client": "npm start --prefix client",
     "serve": "concurrently \"npm run dev\" \"npm run client\""
   },
   "dependencies": {
